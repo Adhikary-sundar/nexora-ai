@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Nexora AI",
+  "description": "AI-powered browser assistant",
+  "version": "0.1.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Nexora AI"
+  },
+  "background": {
+    "service_worker": "src/entries/background/index.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/entries/content/index.ts"]
+    }
+  ],
+  "permissions": []
+}
