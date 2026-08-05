@@ -4,9 +4,10 @@ import Header from "../components/Header";
 
 type HomeProps = {
   onOpenChat: () => void;
+  onSummarize: () => void;
 };
 
-function Home({ onOpenChat }: HomeProps) {
+function Home({ onOpenChat, onSummarize }: HomeProps) {
   return (
     <>
       <Header />
@@ -15,7 +16,10 @@ function Home({ onOpenChat }: HomeProps) {
         <FeatureButton title="🤖 AI Chat" />
       </div>
 
-      <FeatureButton title="📄 Summarize" />
+      <div onClick={onSummarize}>
+        <FeatureButton title="📄 Summarize Current Page" />
+      </div>
+
       <FeatureButton title="🌐 Translate" />
       <FeatureButton title="📸 Screenshot" />
       <FeatureButton title="📚 PDF Assistant" />
